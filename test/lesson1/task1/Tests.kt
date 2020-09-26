@@ -48,14 +48,6 @@ class Tests {
 
     @Test
     @Tag("Trivial")
-    fun seconds() {
-        assertEquals(30035, seconds(8, 20, 35))
-        assertEquals(86400, seconds(24, 0, 0))
-        assertEquals(13, seconds(0, 0, 13))
-    }
-
-    @Test
-    @Tag("Trivial")
     fun lengthInMeters() {
         assertEquals(18.98, lengthInMeters(8, 2, 11), 1e-2)
         assertEquals(2.13, lengthInMeters(1, 0, 0), 1e-2)
@@ -94,9 +86,9 @@ class Tests {
     @Test
     @Tag("Easy")
     fun accountInThreeYears() {
-        assertEquals(133.1, accountInThreeYears(100, 10), 1e-2)
-        assertEquals(1.0, accountInThreeYears(1, 0), 1e-2)
-        assertEquals(104.0, accountInThreeYears(13, 100), 1e-2)
+        assertEquals(133.1, accountInThreeYears(100, 10.0), 1e-2)
+        assertEquals(1.0, accountInThreeYears(1, 0.0), 1e-2)
+        assertEquals(104.0, accountInThreeYears(13, 100.0), 1e-2)
     }
 
     @Test

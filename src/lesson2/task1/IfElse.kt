@@ -2,7 +2,9 @@
 package lesson2.task1
 
 import lesson1.task1.discriminant
+import lesson1.task1.sqr
 import kotlin.math.max
+import kotlin.math.min
 import kotlin.math.sqrt
 
 /**
@@ -62,7 +64,13 @@ fun minBiRoot(a: Double, b: Double, c: Double): Double {
  * Мой возраст. Для заданного 0 < n < 200, рассматриваемого как возраст человека,
  * вернуть строку вида: «21 год», «32 года», «12 лет».
  */
-fun ageDescription(age: Int): String = TODO()
+fun ageDescription(age: Int): String {
+   var yosh="$age год"
+    if(age>0 && age<100) return yosh
+    var yosh1="$age года"
+    if(age>99 && age<200) return yosh1
+return yosh
+}
 
 /**
  * Простая
@@ -73,7 +81,25 @@ fun ageDescription(age: Int): String = TODO()
  */
 fun timeForHalfWay(t1: Double, v1: Double,
                    t2: Double, v2: Double,
-                   t3: Double, v3: Double): Double = TODO()
+                   t3: Double, v3: Double): Double {
+    var yarim=(t1*v1+t2*v2+t3*v3)/2
+    var yarim1=t1*v1
+    var yarim2=t2*v2
+    var yarim3=t3*v3
+    if (v1==0.0){
+        yarim1==0.0
+    }else if (v2==0.0){
+        yarim2==0.0
+    }else if(v3==0.0){
+        yarim3==0.0
+    }
+    return when{
+        yarim1>yarim -> yarim/v1
+        (yarim1+yarim2)<yarim ->  (yarim1/v1)+(yarim2/v2)+(2*yarim-yarim)/v3
+        else -> (yarim1/v1)+(yarim-yarim1)/v2
+    }
+}
+
 
 /**
  * Простая
@@ -110,14 +136,16 @@ fun rookOrBishopThreatens(kingX: Int, kingY: Int,
  * прямоугольным (вернуть 1) или тупоугольным (вернуть 2).
  * Если такой треугольник не существует, вернуть -1.
  */
-fun triangleKind(a: Double, b: Double, c: Double): Int = TODO()
 
-/**
- * Средняя
- *
- * Даны четыре точки на одной прямой: A, B, C и D.
- * Координаты точек a, b, c, d соответственно, b >= a, d >= c.
- * Найти длину пересечения отрезков AB и CD.
- * Если пересечения нет, вернуть -1.
- */
-fun segmentLength(a: Int, b: Int, c: Int, d: Int): Int = TODO()
+
+    /**
+     * Средняя
+     *
+     * Даны четыре точки на одной прямой: A, B, C и D.
+     * Координаты точек a, b, c, d соответственно, b >= a, d >= c.
+     * Найти длину пересечения отрезков AB и CD.
+     * Если пересечения нет, вернуть -1.
+     */
+
+
+
